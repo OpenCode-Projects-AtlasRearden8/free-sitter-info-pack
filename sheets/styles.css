@@ -1,0 +1,407 @@
+:root {
+  --ink: #26323e;
+  --muted: #5f6b78;
+  --faint: #85909c;
+  --hi: #a4501f;
+  --hi-soft: #fdf0e6;
+  --rule: #98a3af;
+  --edge: #d3dae1;
+  --card: #ffffff;
+  --tint: #faf6ef;
+}
+
+@page {
+  size: letter;
+  margin: 13mm 14mm 16mm 14mm;
+}
+
+@page intro-page {
+  @bottom-center {
+    content: "Keep this page on top — the details are on the next page.";
+    font-family: "Nimbus Sans", "Liberation Sans", Arial, Helvetica, sans-serif;
+    font-size: 7.5pt;
+    color: #85909c;
+  }
+}
+
+@page sheet-page {
+  @bottom-center {
+    content: "Fill a page in together, then leave it on the counter.";
+    font-family: "Nimbus Sans", "Liberation Sans", Arial, Helvetica, sans-serif;
+    font-size: 7.5pt;
+    color: #85909c;
+  }
+  @bottom-right {
+    content: "Page 2 of the packet";
+    font-family: "Nimbus Sans", "Liberation Sans", Arial, Helvetica, sans-serif;
+    font-size: 7.5pt;
+    color: #85909c;
+  }
+}
+
+@page solo-page {
+  @bottom-center {
+    content: "Printable from the free sitter packet — share copies freely.";
+    font-family: "Nimbus Sans", "Liberation Sans", Arial, Helvetica, sans-serif;
+    font-size: 7.5pt;
+    color: #85909c;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Nimbus Sans", "Liberation Sans", Arial, Helvetica, sans-serif;
+  color: #26323e;
+  font-size: 9.5pt;
+  line-height: 1.35;
+}
+
+body.solo-doc {
+  height: 250.4mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro-doc { page: intro-page; }
+.sheet-doc { page: sheet-page; }
+.solo-doc { page: solo-page; }
+
+.mast {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 14pt;
+  border-bottom: 1.6pt solid #26323e;
+  padding-bottom: 7pt;
+  margin-bottom: 9pt;
+}
+
+.mast-title { max-width: 57%; }
+
+.kicker {
+  margin: 0 0 3pt;
+  font-size: 7.4pt;
+  font-weight: bold;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #a4501f;
+}
+
+h1 {
+  margin: 0;
+  font-family: "P052", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  font-size: 20pt;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+.sub {
+  margin: 4pt 0 0;
+  color: #5f6b78;
+  font-size: 9.3pt;
+}
+
+.mast-entries { width: 39%; }
+
+.line {
+  display: flex;
+  align-items: flex-end;
+  gap: 7pt;
+  margin: 0 0 6pt;
+}
+
+.line .lab {
+  flex: none;
+  color: #5f6b78;
+  font-size: 8.7pt;
+  white-space: nowrap;
+  padding-bottom: 0.5pt;
+}
+
+.line .fill {
+  flex: 1 1 auto;
+  border-bottom: 1pt dotted #98a3af;
+  min-height: 11.5pt;
+}
+
+.line .hint {
+  flex: none;
+  color: #85909c;
+  font-size: 7.3pt;
+  font-style: italic;
+  padding-bottom: 1pt;
+}
+
+.mini .lab { font-size: 7.9pt; }
+.mini .fill { min-height: 10.5pt; }
+.mini { margin-bottom: 4pt; }
+
+.card {
+  border: 1pt solid #d3dae1;
+  border-radius: 5pt;
+  padding: 7pt 9pt 2.5pt;
+  margin: 0 0 8pt;
+  background: #ffffff;
+  break-inside: avoid;
+}
+
+.card.tint { background: #faf6ef; }
+
+h2.sec {
+  margin: 0 0 5pt;
+  font-size: 9.2pt;
+  font-weight: bold;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #a4501f;
+}
+
+.sos {
+  background: #a4501f;
+  color: #ffffff;
+  border-radius: 5pt;
+  padding: 6.5pt 9pt 6pt;
+  margin: 0 0 8pt;
+  break-inside: avoid;
+}
+
+.sos .big {
+  display: block;
+  font-size: 12pt;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+.sos .tip {
+  display: block;
+  font-size: 8.4pt;
+  color: #ffe9dc;
+  margin-top: 1.5pt;
+}
+
+.row {
+  display: flex;
+  gap: 8pt;
+  align-items: flex-start;
+}
+
+.col { flex: 1 1 50%; }
+
+table.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 5pt;
+}
+
+.tbl th {
+  font-size: 7.4pt;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5f6b78;
+  text-align: left;
+  padding: 0 4pt 3pt;
+  border-bottom: 1pt solid #26323e;
+}
+
+.tbl td {
+  border: 0.7pt solid #d3dae1;
+  padding: 3.5pt 4pt;
+  height: 17pt;
+  vertical-align: top;
+  font-size: 8.5pt;
+}
+
+.tbl td.b { height: 21pt; }
+
+.cb {
+  display: inline-block;
+  width: 9.5pt;
+  height: 9.5pt;
+  border: 1.1pt solid #444c56;
+  border-radius: 2pt;
+  margin-right: 5pt;
+  vertical-align: -1.4pt;
+}
+
+.cbrow {
+  margin: 1pt 0 6pt;
+  font-size: 8.8pt;
+  color: #4d5762;
+}
+
+.cbrow span { margin-right: 13pt; white-space: nowrap; }
+
+.note {
+  font-size: 8.4pt;
+  color: #5f6b78;
+  margin: 2pt 0 4pt;
+}
+
+.footcard {
+  border: 1pt dashed #98a3af;
+  border-radius: 5pt;
+  padding: 6pt 9pt;
+  margin: 0 0 8pt;
+  font-size: 8.6pt;
+  color: #4d5762;
+  break-inside: avoid;
+}
+
+.invite {
+  font-size: 10.8pt;
+  line-height: 1.5;
+  color: #26323e;
+  margin: 0 0 9pt;
+}
+
+.invite b { color: #a4501f; }
+
+.maplist {
+  margin: 0 0 8pt;
+  padding: 0;
+  list-style: none;
+}
+
+.maplist li {
+  margin: 0 0 4.5pt;
+  font-size: 9.6pt;
+  padding-left: 0;
+}
+
+.maplist .what { font-weight: bold; }
+
+.sigrow {
+  display: flex;
+  gap: 12pt;
+  align-items: flex-end;
+  margin-top: 8pt;
+}
+
+.sigrow .line { flex: 1 1 auto; }
+
+.certframe {
+  border: 3pt double #a4501f;
+  border-radius: 6pt;
+  padding: 22pt 26pt 18pt;
+}
+
+.cert-kicker {
+  margin: 0 0 6pt;
+  text-align: center;
+  font-size: 8pt;
+  font-weight: bold;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #5f6b78;
+}
+
+h1.cert-title {
+  text-align: center;
+  font-size: 27pt;
+  margin: 6pt 0 2pt;
+  color: #26323e;
+}
+
+.cert-for {
+  margin: 8pt 0 0;
+  text-align: center;
+  font-size: 10pt;
+  color: #5f6b78;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.awardee {
+  margin: 12pt 0 0;
+  text-align: center;
+}
+
+.awardee .name {
+  display: inline-block;
+  width: 66%;
+  border-bottom: 1pt dotted #98a3af;
+  min-height: 20pt;
+}
+
+.cert-text {
+  margin: 14pt auto 0;
+  max-width: 78%;
+  text-align: center;
+  font-size: 10.6pt;
+  line-height: 1.55;
+  color: #3a4550;
+}
+
+.cert-text .fillword {
+  display: inline-block;
+  border-bottom: 1pt dotted #98a3af;
+  min-height: 10pt;
+  padding: 0 26pt;
+}
+
+.cert-bottom {
+  display: flex;
+  gap: 12pt;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20pt;
+}
+
+.sig { width: 32%; text-align: center; }
+.sig .cap { font-size: 8pt; color: #5f6b78; margin-top: 3pt; letter-spacing: 0.05em; }
+
+.sig .rule { border-bottom: 1pt solid #26323e; min-height: 16pt; }
+
+.stamp {
+  width: 92pt;
+  height: 92pt;
+  border: 2pt solid #a4501f;
+  border-radius: 50%;
+  color: #a4501f;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 7.4pt;
+  font-weight: bold;
+  padding-top: 22pt;
+  box-sizing: border-box;
+}
+
+.stamp .in {
+  display: block;
+  font-size: 6.4pt;
+  font-weight: normal;
+  color: #a4501f;
+  margin-top: 3pt;
+  letter-spacing: 0.04em;
+}
+
+.treat-frame {
+  border: 2.5pt solid #a4501f;
+  border-radius: 7pt;
+  padding: 14pt 18pt 10pt;
+}
+
+.treat-frame h1 {
+  font-size: 24pt;
+  text-align: center;
+  margin: 4pt 0 2pt;
+}
+
+.treat-tag {
+  text-align: center;
+  font-size: 10pt;
+  color: #5f6b78;
+  margin: 0 0 10pt;
+}
+
+.centered { text-align: center; }
+
+.keepnote {
+  text-align: center;
+  font-size: 8.4pt;
+  color: #5f6b78;
+  margin: 8pt 0 0;
+}
